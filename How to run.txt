@@ -1,0 +1,9 @@
+DB:
+
+docker run -d -p 5432:5432 --name Carpedia -e POSTGRES_PASSWORD=pass postgres
+
+Create a local instance of Postgresql using docker
+Use the following credentials:
+        'NAME': 'carpedia',
+        'USER': 'postgres',
+        'PASSWORD': 'pass',
