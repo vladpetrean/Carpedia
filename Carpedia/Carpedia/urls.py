@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from rest_framework.routers import DefaultRouter
+from rest_framework_swagger.views import get_swagger_view
 
 from car_management.views import hello_world, CarViewSet
 
@@ -23,9 +24,13 @@ router = DefaultRouter()
 router.register(r'car', CarViewSet, basename='car')
 urlpatterns = router.urls
 
+schema_view = get_swagger_view(title='Carpedia API')
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url('home/', hello_world),
+    url(r'^$', schema_view)
+
 ]
 
 urlpatterns += router.urls
