@@ -16,18 +16,18 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from rest_framework.routers import DefaultRouter
-from rest_framework_simplejwt import views as jwt_views
-from car_management.views import CarViewSet
+from car_management.views import CarViewSet, UserCreateAPIView
+from rest_framework_swagger.views import get_swagger_view
 
 router = DefaultRouter()
 router.register(r'car', CarViewSet, basename='car')
-urlpatterns = router.urls
 
 schema_view = get_swagger_view(title='Carpedia API')
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', schema_view),
+    url(r'users/', UserCreateAPIView.as_view())
 
 ]
 
