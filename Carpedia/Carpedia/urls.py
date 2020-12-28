@@ -13,8 +13,9 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
+
 from rest_framework.routers import DefaultRouter
 from car_management.views import CarViewSet
 from user_management.views import UserCreateAPIView
@@ -28,7 +29,7 @@ schema_view = get_swagger_view(title='Carpedia API')
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', schema_view),
-    url(r'users/', UserCreateAPIView.as_view())
+    url(r'users/', UserCreateAPIView.as_view()),
 
 ]
 
