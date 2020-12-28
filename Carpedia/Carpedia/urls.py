@@ -16,7 +16,8 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from rest_framework.routers import DefaultRouter
-from car_management.views import CarViewSet, UserCreateAPIView
+from car_management.views import CarViewSet
+from user_management.views import UserCreateAPIView
 from rest_framework_swagger.views import get_swagger_view
 
 router = DefaultRouter()

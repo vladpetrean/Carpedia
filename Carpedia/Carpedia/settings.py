@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 
+# admin user: petrean parola: parola1995
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -38,7 +40,8 @@ INSTALLED_APPS = [
     'car_management',
     'rest_framework_swagger',
     'rest_framework',
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
+    'user_management'
 ]
 
 MIDDLEWARE = [
