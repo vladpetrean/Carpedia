@@ -18,7 +18,7 @@ from django.contrib import admin
 
 from rest_framework.routers import DefaultRouter
 from car_management.views import CarViewSet
-from user_management.views import UserCreateAPIView
+from user_management.views import UserCreateAPIView, Login, LogOut
 from rest_framework_swagger.views import get_swagger_view
 
 router = DefaultRouter()
@@ -30,6 +30,8 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', schema_view),
     url(r'users/', UserCreateAPIView.as_view()),
+    url(r'login/', Login.as_view()),
+    url(r'logout/', LogOut.as_view()),
 
 ]
 
