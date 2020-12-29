@@ -9,7 +9,6 @@ from rest_auth.views import LogoutView, django_logout, LoginView
 from django.core.exceptions import ObjectDoesNotExist
 from rest_framework import generics
 from rest_framework.permissions import AllowAny
-from rest_auth.views import django_logout
 from rest_framework.response import Response
 
 from user_management.serializer import UserSerializer
